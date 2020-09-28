@@ -5,9 +5,9 @@ session_start();
 
 require_once('connectbdd.php');
 
-include("header.inc.php");
+include("header.inc.php"); //Inclure le header de page
  
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=nom_de_la_base_de_donne_resto', 'root', '');
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=restaurant', 'root', '');
  
 if(isset($_SESSION['nom_du_menu_a_modifier'])) {
    $req = $bdd->prepare("SELECT * FROM table_de_la_base_de_donnee_pour_menu WHERE numUtil = ?");
@@ -19,5 +19,6 @@ if(isset($_SESSION['nom_du_menu_a_modifier'])) {
       $insertname->execute(array($newname, $_SESSION['nom_du_menu_a_modifier']));
       header('Location: la_page_de_reservation?nom_du_menu_a_modifier='.$_SESSION['nom_du_menu_a_modifier']);
     }
-   
+// à la suite on rajouterait une page html de menu
 ?>
+

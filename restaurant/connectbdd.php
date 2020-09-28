@@ -2,14 +2,14 @@
 
 // Pour se connecter à notre base de données
 // cette page doit etre requise sur les pages qui la necessite afin de faire valoir ce que droit 
-$pdo = new PDO("mysql:host=localhost;dbname=nom_de_la_base_de_donnée", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+$pdo = new PDO("mysql:host=localhost;dbname=restaurant", "root", "", array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 ?>
 
 <?php
 
 class connexiondb {
     private $host = '127.0.0.1';
-    private $name = '';
+    private $name = 'restaurant';
     private $user = 'root';
     private $pass = '';
     private $connexion;
